@@ -8,7 +8,7 @@ d1$name[is.na(d1$name)] <- "nameless"
 d1$extra[is.na(d1$extra)] <- ""
 d1$mainspecies <- as.factor(d1$mainspecies)
 
-leaflet(d1) %>%addProviderTiles("Stamen.Toner") %>% 
+leaflet(d1, 900, 640) %>%addProviderTiles("Stamen.Toner") %>% 
   addCircleMarkers(lng = ~jitterlong, lat=~jitterlat, 
              fillColor = ~mscolor, color=~mscolor,
              radius=10, weight=1, fillOpacity=0.6,

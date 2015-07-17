@@ -5,7 +5,7 @@ library(RColorBrewer)
 require(dplyr)
 
 #data
-d1 <- tbl_df(read.csv("D:/Dropbox/uni/droevendalia15/dierenlijst2015.csv", fileEncoding = "UTF-8",
+d1 <- tbl_df(read.csv("dierenlijst2015.csv", fileEncoding = "UTF-8",
                       stringsAsFactors = F, na.strings="", row.names = NULL, sep=";", ))
 #View(d1[d1$species =="cat",])
 
