@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Plotting Circles on a Map</title>
+<meta charset="utf-8"/>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+<body>
+<div id="map" style="width: 800px; height: 500px"></div>
+
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script type="text/javascript">
+
+//Set the map center and zoom level
+var map = L.map('map').setView([28.7271309, 77.1480638], 11);
+mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+L.tileLayer(
+'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; ' + mapLink + ' Contributors',
+maxZoom: 18,
+}).addTo(map);
+
+//Add coordinates here
+var planes1 = [
+["SHALIMARBAGH DELHI",28.716413,77.154585 ],
+["NARELA DELHI",28.85396,77.091784 ],
+["KANJHAWALA DELHI",28.734729,77.004176 ],
+["BAWANA",28.805465,77.046301 ],
+["KASHMIRI GATE",28.666472,77.233289 ],
+["NARAINA GOPINATH BAZAAR",28.596289,77.133865 ]
+];
+
+//Change the size and color of circular markers here
+for (var i = 0; i < planes1.length; i++) {
+circle = new L.circle([planes1[i][1],planes1[i][2]], 500, {
+fillOpacity: 1.0
+})
+.bindPopup(planes1[i][0])
+.addTo(map);
+}
+
+</script>
+</body>
+</html>
